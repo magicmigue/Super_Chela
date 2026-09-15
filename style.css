@@ -1,0 +1,1454 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html,
+body {
+width: 100%;
+height: 100%;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f7f7f5;
+color: #111;
+overflow: hidden;
+}
+
+:root {
+--rojo: #a71920;
+--verde: #164d32;
+--negro: #111;
+--blanco: #ffffff;
+--gris: #f1f1ee;
+}
+
+/* =========================================
+PÁGINA
+========================================= */
+
+.pagina {
+width: 100%;
+height: 100dvh;
+
+ 
+min-height: 0;
+
+background: var(--blanco);
+
+position: relative;
+overflow: hidden;
+
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+
+padding: 2vh 20px;
+ 
+
+}
+
+/* =========================================
+CONTENIDO
+========================================= */
+
+.contenido {
+width: min(1200px, 96vw);
+
+ 
+display: flex;
+flex-direction: column;
+
+align-items: center;
+justify-content: center;
+
+text-align: center;
+
+position: relative;
+z-index: 2;
+
+max-height: 94dvh;
+ 
+
+}
+
+/* =========================================
+DECORACIONES
+========================================= */
+
+.decoracion {
+position: absolute;
+
+ 
+width: 190px;
+height: 28px;
+
+opacity: 0.95;
+
+z-index: 1;
+ 
+
+}
+
+.decoracion-izquierda {
+top: 25px;
+left: -65px;
+
+ 
+background: linear-gradient(
+    to bottom,
+    var(--verde) 0%,
+    var(--verde) 33%,
+    white 33%,
+    white 66%,
+    var(--rojo) 66%,
+    var(--rojo) 100%
+);
+
+transform: rotate(-35deg);
+ 
+
+}
+
+.decoracion-derecha {
+right: -65px;
+bottom: 40px;
+
+ 
+background: linear-gradient(
+    to bottom,
+    var(--rojo) 0%,
+    var(--rojo) 33%,
+    white 33%,
+    white 66%,
+    var(--verde) 66%,
+    var(--verde) 100%
+);
+
+transform: rotate(-35deg);
+ 
+
+}
+
+/* =========================================
+ENCABEZADO
+========================================= */
+
+.encabezado {
+width: 100%;
+text-align: center;
+}
+
+.mini-linea {
+display: flex;
+
+ 
+justify-content: center;
+align-items: center;
+
+gap: 14px;
+ 
+
+}
+
+.mini-linea span {
+width: 55px;
+height: 5px;
+
+ 
+border-radius: 10px;
+ 
+
+}
+
+.mini-linea span:first-child {
+background: var(--verde);
+}
+
+.mini-linea span:last-child {
+background: var(--rojo);
+}
+
+.mini-linea p {
+font-size: clamp(16px, 2.2vw, 30px);
+
+ 
+font-weight: 900;
+
+letter-spacing: 2px;
+ 
+
+}
+
+.encabezado h1 {
+font-size: clamp(55px, 8vw, 115px);
+
+ 
+line-height: 0.85;
+
+font-weight: 950;
+
+letter-spacing: -5px;
+
+color: var(--rojo);
+
+margin: 3px 0 7px;
+ 
+
+}
+
+.encabezado h2 {
+font-size: clamp(12px, 1.5vw, 21px);
+
+ 
+letter-spacing: 2px;
+
+color: var(--verde);
+
+font-weight: 900;
+ 
+
+}
+
+.separador {
+width: 280px;
+max-width: 70%;
+
+ 
+height: 3px;
+
+background: var(--verde);
+
+margin: 10px auto 12px;
+ 
+
+}
+
+/* =========================================
+CONTENIDO CENTRAL
+========================================= */
+
+.contenido-central {
+width: 100%;
+
+ 
+display: grid;
+
+grid-template-columns: 0.82fr 1.18fr;
+
+gap: 18px;
+
+align-items: stretch;
+
+min-height: 0;
+ 
+
+}
+
+/* =========================================
+PRIMER FRAME
+RIFA + CONTADOR
+========================================= */
+
+.frame-rifa {
+width: 100%;
+
+ 
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+
+background: var(--blanco);
+
+border: 3px solid var(--verde);
+
+border-radius: 15px;
+
+padding: 16px;
+
+min-width: 0;
+ 
+
+}
+
+/* =========================================
+MENSAJE PRINCIPAL
+========================================= */
+
+.principal {
+width: 100%;
+text-align: center;
+}
+
+.estamos {
+font-size: clamp(18px, 2.8vw, 38px);
+
+ 
+font-weight: 950;
+
+letter-spacing: 1px;
+ 
+
+}
+
+.principal h3 {
+font-size: clamp(55px, 8vw, 110px);
+
+ 
+line-height: 0.8;
+
+color: var(--rojo);
+
+font-weight: 950;
+
+letter-spacing: 3px;
+
+margin: 4px 0 8px;
+ 
+
+}
+
+.descripcion {
+font-size: clamp(15px, 1.8vw, 25px);
+
+ 
+color: var(--verde);
+
+font-weight: 800;
+ 
+
+}
+
+.descripcion strong {
+color: var(--rojo);
+
+ 
+font-size: 1.25em;
+ 
+
+}
+
+.boleto {
+font-size: clamp(15px, 1.8vw, 25px);
+
+ 
+font-weight: 950;
+
+color: var(--verde);
+
+margin-top: 2px;
+ 
+
+}
+
+.boleto strong {
+color: var(--rojo);
+}
+
+/* =========================================
+CONTADOR
+========================================= */
+
+.contador-section {
+width: 100%;
+
+ 
+background: var(--gris);
+
+border: 3px solid var(--verde);
+
+border-radius: 15px;
+
+padding: clamp(9px, 1.4vh, 16px) 12px;
+
+text-align: center;
+
+margin-top: clamp(12px, 2vh, 20px);
+ 
+
+}
+
+.etiqueta {
+display: inline-block;
+
+ 
+background: var(--verde);
+
+color: white;
+
+font-size: clamp(12px, 1.5vw, 20px);
+
+font-weight: 950;
+
+letter-spacing: 2px;
+
+padding: 4px 24px;
+
+margin-bottom: 5px;
+ 
+
+}
+
+.contador-section h4 {
+font-size: clamp(25px, 3.7vw, 48px);
+
+ 
+line-height: 1;
+
+color: var(--rojo);
+
+font-weight: 950;
+ 
+
+}
+
+.hora-sorteo {
+color: var(--verde);
+
+ 
+font-size: clamp(11px, 1.3vw, 17px);
+
+font-weight: 900;
+
+letter-spacing: 1px;
+
+margin: 4px 0 9px;
+ 
+
+}
+
+/* =========================================
+NÚMEROS DEL CRONÓMETRO
+========================================= */
+
+.contador {
+display: flex;
+
+ 
+justify-content: center;
+align-items: center;
+
+gap: clamp(3px, 0.7vw, 8px);
+
+width: 100%;
+ 
+
+}
+
+.unidad {
+flex: 1;
+
+ 
+max-width: 105px;
+
+min-width: 0;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+ 
+
+}
+
+.unidad span {
+display: block;
+
+ 
+width: 100%;
+
+background: white;
+
+border: 2px solid var(--rojo);
+
+border-radius: 8px;
+
+padding: clamp(6px, 1vh, 10px) 3px;
+
+font-size: clamp(24px, 3.2vw, 43px);
+
+line-height: 1;
+
+font-weight: 950;
+
+color: var(--negro);
+
+overflow: hidden;
+ 
+
+}
+
+.unidad small {
+margin-top: 3px;
+
+ 
+font-size: clamp(6px, 0.65vw, 9px);
+
+color: var(--verde);
+
+font-weight: 950;
+
+letter-spacing: 0.4px;
+ 
+
+}
+
+.puntos {
+font-size: clamp(20px, 2.7vw, 34px);
+
+ 
+font-weight: 950;
+
+color: var(--rojo);
+
+flex-shrink: 0;
+ 
+
+}
+
+/* =========================================
+SEGUNDO FRAME
+PREMIOS
+========================================= */
+
+.premios-section {
+width: 100%;
+
+ 
+background: var(--gris);
+
+border: 3px solid var(--verde);
+
+border-radius: 15px;
+
+padding: 10px;
+
+min-width: 0;
+
+min-height: 0;
+
+display: flex;
+flex-direction: column;
+ 
+
+}
+
+.premios-titulo {
+display: inline-block;
+
+ 
+align-self: center;
+
+background: var(--verde);
+
+color: white;
+
+font-size: clamp(14px, 1.5vw, 22px);
+
+font-weight: 950;
+
+letter-spacing: 2px;
+
+padding: 5px 30px;
+
+margin-bottom: 8px;
+ 
+
+}
+
+/* =========================================
+GRID DE PREMIOS
+========================================= */
+
+.premios-grid {
+width: 100%;
+
+ 
+flex: 1;
+
+min-height: 0;
+
+display: grid;
+
+grid-template-columns: repeat(2, minmax(0, 1fr));
+
+grid-template-rows: repeat(4, minmax(0, 1fr));
+
+gap: 7px;
+ 
+
+}
+
+/* =========================================
+TARJETA DE PREMIO
+========================================= */
+
+.premio {
+min-width: 0;
+min-height: 0;
+
+ 
+display: flex;
+
+align-items: center;
+
+background: var(--blanco);
+
+border: 2px solid #d5d5d0;
+
+border-radius: 10px;
+
+padding: 5px;
+
+overflow: hidden;
+ 
+
+}
+
+.premio:hover {
+border-color: var(--rojo);
+}
+
+/* =========================================
+IMAGEN DEL PREMIO
+========================================= */
+
+.premio-imagen {
+width: 42%;
+
+ 
+height: 100%;
+
+min-width: 80px;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-shrink: 0;
+
+overflow: hidden;
+ 
+
+}
+
+.premio-imagen img {
+width: 100%;
+height: 100%;
+
+ 
+object-fit: contain;
+
+display: block;
+ 
+
+}
+
+/* =========================================
+INFORMACIÓN DEL PREMIO
+========================================= */
+
+.premio-info {
+width: 58%;
+
+ 
+min-width: 0;
+
+padding: 2px 5px;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: flex-start;
+
+text-align: left;
+ 
+
+}
+
+.lugar {
+    display: inline-block;
+    color: var(--rojo);
+    font-size: clamp(12px, 0.85vw, 14px);
+    font-weight: 950;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+}
+
+.premio-info p {
+font-size: clamp(8px, 0.85vw, 13px);
+
+ 
+line-height: 1.05;
+
+color: var(--negro);
+
+font-weight: 800;
+ 
+
+}
+
+.premio-info p strong {
+display: block;
+
+ 
+color: var(--verde);
+
+font-weight: 950;
+
+margin-top: 2px;
+ 
+
+}
+
+/* =========================================
+DOBLE PREMIO
+========================================= */
+
+.doble {
+display: inline-block;
+
+ 
+background: var(--rojo);
+
+color: white;
+
+font-size: clamp(7px, 0.65vw, 10px);
+
+font-weight: 950;
+
+letter-spacing: 0.3px;
+
+padding: 2px 4px;
+
+border-radius: 3px;
+
+margin-bottom: 2px;
+ 
+
+}
+
+/* =========================================
+RESTRICCIONES
+========================================= */
+
+.restricciones {
+width: 100%;
+
+ 
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+gap: 7px;
+
+margin: clamp(7px, 1.2vh, 12px) auto 0;
+
+padding-top: clamp(5px, 0.8vh, 8px);
+
+border-top: 1px solid var(--verde);
+
+text-align: center;
+ 
+
+}
+
+.restricciones span {
+color: var(--rojo);
+
+ 
+font-size: 11px;
+ 
+
+}
+
+.restricciones p {
+font-size: clamp(7px, 0.7vw, 9px);
+
+ 
+font-weight: 800;
+ 
+
+}
+
+.restricciones strong {
+color: var(--rojo);
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer {
+display: block;
+
+ 
+position: absolute;
+
+bottom: 10px;
+
+left: 0;
+
+width: 100%;
+
+text-align: center;
+
+font-size: clamp(8px, 0.8vw, 11px);
+
+font-weight: 800;
+
+letter-spacing: 1px;
+
+color: var(--verde);
+
+z-index: 2;
+ 
+
+}
+
+/* =========================================
+PANTALLAS CON POCA ALTURA
+========================================= */
+
+@media (max-height: 750px) {
+
+ 
+.pagina {
+    padding: 5px 15px;
+}
+
+.contenido {
+    max-height: 96dvh;
+}
+
+.encabezado h1 {
+    font-size: clamp(50px, 7vw, 85px);
+
+    margin: 2px 0 5px;
+}
+
+.separador {
+    margin: 6px auto 8px;
+}
+
+.contenido-central {
+    gap: 12px;
+}
+
+.frame-rifa {
+    padding: 10px;
+}
+
+.principal h3 {
+    font-size: clamp(50px, 7vw, 85px);
+
+    margin: 2px 0 5px;
+}
+
+.contador-section {
+    margin-top: 6px;
+
+    padding: 7px 10px 9px;
+}
+
+.hora-sorteo {
+    margin: 3px 0 6px;
+}
+
+.premios-section {
+    padding: 7px;
+}
+
+.premios-titulo {
+    margin-bottom: 5px;
+    padding: 4px 25px;
+}
+
+.premios-grid {
+    gap: 5px;
+}
+
+.premio {
+    padding: 3px;
+}
+
+.premio-imagen {
+    min-width: 65px;
+}
+
+.restricciones {
+    margin-top: 6px;
+    padding-top: 4px;
+}
+
+footer {
+    bottom: 5px;
+}
+ 
+
+}
+
+/* =========================================
+PANTALLAS MUY PEQUEÑAS DE ALTO
+========================================= */
+
+@media (max-height: 600px) {
+
+ 
+.pagina {
+    padding: 3px 10px;
+}
+
+.mini-linea {
+    gap: 8px;
+}
+
+.mini-linea span {
+    width: 35px;
+    height: 3px;
+}
+
+.mini-linea p {
+    font-size: 14px;
+}
+
+.encabezado h1 {
+    font-size: 55px;
+
+    margin: 1px 0 3px;
+}
+
+.encabezado h2 {
+    font-size: 10px;
+}
+
+.separador {
+    width: 150px;
+
+    height: 2px;
+
+    margin: 5px auto 6px;
+}
+
+.contenido-central {
+    gap: 7px;
+}
+
+.frame-rifa {
+    padding: 6px;
+}
+
+.estamos {
+    font-size: 18px;
+}
+
+.principal h3 {
+    font-size: 55px;
+
+    margin: 1px 0 3px;
+}
+
+.descripcion {
+    font-size: 13px;
+}
+
+.boleto {
+    font-size: 13px;
+}
+
+.contador-section {
+    margin-top: 5px;
+
+    padding: 6px 7px 7px;
+
+    border-width: 2px;
+
+    border-radius: 10px;
+}
+
+.etiqueta {
+    font-size: 11px;
+
+    padding: 3px 15px;
+
+    margin-bottom: 3px;
+}
+
+.contador-section h4 {
+    font-size: 23px;
+}
+
+.hora-sorteo {
+    font-size: 9px;
+
+    margin: 2px 0 5px;
+}
+
+.unidad span {
+    font-size: 22px;
+
+    padding: 5px 2px;
+}
+
+.unidad small {
+    font-size: 6px;
+}
+
+.puntos {
+    font-size: 18px;
+}
+
+.premios-section {
+    padding: 5px;
+}
+
+.premios-titulo {
+    font-size: 10px;
+
+    padding: 3px 15px;
+
+    margin-bottom: 3px;
+}
+
+.premios-grid {
+    gap: 3px;
+}
+
+.premio {
+    border-width: 1px;
+
+    border-radius: 6px;
+
+    padding: 2px;
+}
+
+.premio-imagen {
+    min-width: 50px;
+}
+
+.premio-info {
+    padding: 1px 3px;
+}
+
+.lugar {
+    font-size: 10px;
+}
+
+.premio-info p {
+    font-size: 6px;
+}
+
+.doble {
+    font-size: 5px;
+
+    padding: 1px 2px;
+}
+
+.restricciones {
+    margin-top: 4px;
+
+    padding-top: 3px;
+}
+
+.restricciones p {
+    font-size: 7px;
+}
+
+footer {
+    font-size: 7px;
+
+    bottom: 3px;
+}
+ 
+
+}
+
+/* =========================================
+CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+ 
+.pagina {
+    padding: 8px;
+}
+
+.contenido {
+    width: 94vw;
+    max-width: 650px;
+}
+
+.encabezado h1 {
+    font-size: 65px;
+
+    letter-spacing: -3px;
+}
+
+.encabezado h2 {
+    font-size: 11px;
+}
+
+.mini-linea {
+    gap: 9px;
+}
+
+.mini-linea span {
+    width: 35px;
+    height: 4px;
+}
+
+.mini-linea p {
+    font-size: 16px;
+}
+
+.separador {
+    width: 170px;
+
+    margin: 7px auto 8px;
+}
+
+
+/*
+   En celular mantenemos los dos
+   frames lado a lado para conservar
+   la pantalla sin scroll.
+*/
+
+.contenido-central {
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 7px;
+}
+
+.frame-rifa {
+    padding: 6px;
+
+    border-width: 2px;
+
+    border-radius: 10px;
+}
+
+.estamos {
+    font-size: 16px;
+}
+
+.principal h3 {
+    font-size: 55px;
+
+    margin: 2px 0 4px;
+}
+
+.descripcion {
+    font-size: 11px;
+}
+
+.boleto {
+    font-size: 11px;
+}
+
+.contador-section {
+    width: 100%;
+
+    margin-top: 7px;
+
+    padding: 7px 4px 8px;
+
+    border-width: 2px;
+
+    border-radius: 10px;
+}
+
+.etiqueta {
+    font-size: 10px;
+
+    padding: 3px 10px;
+}
+
+.contador-section h4 {
+    font-size: 20px;
+}
+
+.hora-sorteo {
+    font-size: 8px;
+
+    margin: 3px 0 6px;
+}
+
+.contador {
+    gap: 1px;
+}
+
+.unidad span {
+    font-size: 18px;
+
+    padding: 5px 1px;
+
+    border-width: 1px;
+}
+
+.unidad small {
+    font-size: 5px;
+}
+
+.puntos {
+    font-size: 15px;
+}
+
+
+/* PREMIOS EN CELULAR */
+
+.premios-section {
+    padding: 5px;
+
+    border-width: 2px;
+
+    border-radius: 10px;
+}
+
+.premios-titulo {
+    font-size: 11px;
+
+    padding: 3px 15px;
+
+    margin-bottom: 4px;
+}
+
+.premios-grid {
+    gap: 3px;
+}
+
+.premio {
+    border-width: 1px;
+
+    border-radius: 6px;
+
+    padding: 2px;
+}
+
+.premio-imagen {
+    width: 42%;
+
+    min-width: 40px;
+}
+
+.premio-info {
+    width: 58%;
+
+    padding: 1px 3px;
+}
+
+.lugar {
+    font-size: 6px;
+
+    margin-bottom: 1px;
+}
+
+.premio-info p {
+    font-size: 6px;
+
+    line-height: 1;
+}
+
+.premio-info p strong {
+    margin-top: 1px;
+}
+
+.doble {
+    font-size: 5px;
+
+    padding: 1px 2px;
+
+    margin-bottom: 1px;
+}
+
+.restricciones {
+    margin-top: 6px;
+
+    padding-top: 4px;
+}
+
+.restricciones p {
+    font-size: 7px;
+}
+
+footer {
+    font-size: 7px;
+
+    bottom: 5px;
+}
+
+
+}
+
+/* =========================================
+CELULAR MUY PEQUEÑO
+========================================= */
+
+@media (max-width: 380px) {
+
+ 
+.pagina {
+    padding: 5px;
+}
+
+.contenido {
+    width: 96vw;
+}
+
+.encabezado h1 {
+    font-size: 55px;
+}
+
+.principal h3 {
+    font-size: 48px;
+}
+
+.contenido-central {
+    gap: 4px;
+}
+
+.frame-rifa {
+    padding: 4px;
+}
+
+.estamos {
+    font-size: 14px;
+}
+
+.descripcion,
+.boleto {
+    font-size: 9px;
+}
+
+.contador-section {
+    padding: 5px 2px 6px;
+}
+
+.contador-section h4 {
+    font-size: 17px;
+}
+
+.hora-sorteo {
+    font-size: 7px;
+}
+
+.unidad span {
+    font-size: 15px;
+
+    padding: 4px 1px;
+}
+
+.unidad small {
+    font-size: 4px;
+}
+
+.puntos {
+    font-size: 12px;
+}
+
+.premios-section {
+    padding: 3px;
+}
+
+.premios-titulo {
+    font-size: 9px;
+
+    padding: 2px 10px;
+}
+
+.premios-grid {
+    gap: 2px;
+}
+
+.premio {
+    padding: 1px;
+
+    border-radius: 4px;
+}
+
+.premio-imagen {
+    min-width: 32px;
+}
+
+.premio-info {
+    padding: 1px 2px;
+}
+
+.lugar {
+    font-size: 5px;
+}
+
+.premio-info p {
+    font-size: 5px;
+}
+
+.doble {
+    font-size: 4px;
+}
+
+.restricciones p {
+    font-size: 6px;
+}
+
+
+}
+
+/* =========================================
+PANTALLAS GRANDES
+========================================= */
+
+@media (min-width: 1400px) {
+
+
+.contenido {
+    width: 1250px;
+}
+
+.encabezado h1 {
+    font-size: 105px;
+}
+
+.principal h3 {
+    font-size: 105px;
+}
+
+.contador-section h4 {
+    font-size: 48px;
+}
+
+.unidad span {
+    font-size: 42px;
+}
+
+.premio-imagen {
+    min-width: 105px;
+}
+
+.premio-info p {
+    font-size: 14px;
+}
+
+.lugar {
+    font-size: 11px;
+}
+
+.doble {
+    font-size: 9px;
+}
+
+
+}
