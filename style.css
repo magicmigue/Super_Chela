@@ -1,0 +1,1485 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html,
+body {
+width: 100%;
+height: 100%;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f7f7f5;
+color: #111;
+overflow: hidden;
+}
+
+:root {
+--rojo: #a71920;
+--verde: #164d32;
+--negro: #111;
+--blanco: #ffffff;
+--gris: #f1f1ee;
+}
+
+
+/* =========================================
+PÁGINA
+========================================= */
+
+.pagina {
+width: 100%;
+height: 100dvh;
+min-height: 0;
+
+background: var(--blanco);
+
+position: relative;
+overflow: hidden;
+
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+
+padding: 2vh 20px;
+}
+
+
+/* =========================================
+CONTENIDO
+========================================= */
+
+.contenido {
+width: min(1000px, 94vw);
+
+display: flex;
+flex-direction: column;
+
+align-items: center;
+justify-content: center;
+
+text-align: center;
+
+position: relative;
+z-index: 2;
+
+max-height: 94dvh;
+}
+
+
+/* =========================================
+DECORACIONES
+========================================= */
+
+.decoracion {
+position: absolute;
+
+width: 190px;
+height: 28px;
+
+opacity: 0.95;
+
+z-index: 1;
+}
+
+.decoracion-izquierda {
+top: 25px;
+left: -65px;
+
+background: linear-gradient(
+to bottom,
+var(--verde) 0%,
+var(--verde) 33%,
+white 33%,
+white 66%,
+var(--rojo) 66%,
+var(--rojo) 100%
+);
+
+transform: rotate(-35deg);
+}
+
+.decoracion-derecha {
+right: -65px;
+bottom: 40px;
+
+background: linear-gradient(
+to bottom,
+var(--rojo) 0%,
+var(--rojo) 33%,
+white 33%,
+white 66%,
+var(--verde) 66%,
+var(--verde) 100%
+);
+
+transform: rotate(-35deg);
+}
+
+
+/* =========================================
+ENCABEZADO
+========================================= */
+
+.encabezado {
+width: 100%;
+text-align: center;
+position: relative;
+top: -20px;
+}
+
+.mini-linea {
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+gap: 14px;
+}
+
+.mini-linea span {
+width: 55px;
+height: 5px;
+
+border-radius: 10px;
+}
+
+.mini-linea span:first-child {
+background: var(--verde);
+}
+
+.mini-linea span:last-child {
+background: var(--rojo);
+}
+
+.mini-linea p {
+font-size: clamp(16px, 2.2vw, 30px);
+
+font-weight: 900;
+
+letter-spacing: 2px;
+}
+
+.encabezado h1 {
+font-size: clamp(55px, 8vw, 115px);
+
+line-height: 0.85;
+
+font-weight: 950;
+
+letter-spacing: -5px;
+
+color: var(--rojo);
+
+margin: 3px 0 7px;
+}
+
+.encabezado h2 {
+font-size: clamp(12px, 1.5vw, 21px);
+
+letter-spacing: 2px;
+
+color: var(--verde);
+
+font-weight: 900;
+}
+
+.separador {
+width: 280px;
+max-width: 70%;
+
+height: 3px;
+
+background: var(--verde);
+
+margin: 10px auto 14px;
+}
+
+
+/* =========================================
+MISTERIO
+========================================= */
+
+.misterio-personaje {
+width: min(620px, 90%);
+margin: 8px auto 4px;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+
+gap: 3px;
+}
+
+.misterio-linea {
+width: 70px;
+height: 3px;
+
+background: var(--verde);
+
+border-radius: 10px;
+
+margin-bottom: 2px;
+}
+
+.misterio-linea.rojo {
+background: var(--rojo);
+
+margin-top: 2px;
+}
+
+.misterio-pregunta {
+font-size: clamp(11px, 1.3vw, 17px);
+
+font-weight: 950;
+letter-spacing: 1.2px;
+
+color: var(--verde);
+
+line-height: 1.1;
+}
+
+.misterio-sorpresa {
+font-size: clamp(9px, 1.05vw, 14px);
+
+font-weight: 900;
+letter-spacing: 0.8px;
+
+color: var(--rojo);
+
+line-height: 1.1;
+}
+
+
+/* =========================================
+MINI JUEGO
+========================================= */
+
+.juego-section {
+width: min(850px, 100%);
+
+background: var(--gris);
+
+border: 3px solid var(--verde);
+
+border-radius: 15px;
+
+padding: 10px 12px 12px;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+/* =========================================
+TÍTULO
+========================================= */
+
+.juego-titulo {
+display: inline-block;
+
+background: var(--verde);
+
+color: white;
+
+font-size: clamp(14px, 1.7vw, 22px);
+
+font-weight: 950;
+
+letter-spacing: 2px;
+
+padding: 5px 30px;
+
+margin-bottom: 5px;
+}
+
+.instruccion {
+color: var(--verde);
+
+font-size: clamp(9px, 1.1vw, 14px);
+
+font-weight: 900;
+
+letter-spacing: 1px;
+
+margin-bottom: 7px;
+}
+
+
+/* =========================================
+ZONA DEL JUEGO
+========================================= */
+
+.zona-juego {
+position: relative;
+
+width: 100%;
+
+height: clamp(370px, 55vh, 680px);
+
+background: var(--blanco);
+
+background-image: url("Super_chela.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+border: 2px solid var(--verde);
+
+border-radius: 10px;
+
+overflow: hidden;
+
+touch-action: none;
+
+cursor: grab;
+}
+
+.zona-juego:active {
+cursor: grabbing;
+}
+
+
+/* =========================================
+JUGADOR
+========================================= */
+
+.jugador {
+position: absolute;
+
+left: 50%;
+bottom: 6px;
+
+width: clamp(180px, 16vw, 150px);
+
+transform: translateX(-50%);
+
+-webkit-user-select: none;
+user-select: none;
+
+pointer-events: none;
+
+will-change: left;
+
+z-index: 10;
+}
+
+.jugador img {
+width: 100%;
+height: auto;
+
+display: block;
+
+image-rendering: pixelated;
+
+transform-origin: center center;
+}
+
+.jugador.mirando-izquierda img {
+transform: scaleX(1);
+}
+
+.jugador.mirando-derecha img {
+transform: scaleX(-1);
+}
+
+
+/* =========================================
+MARCADOR
+========================================= */
+
+.marcador {
+position: absolute;
+
+top: 8px;
+left: 8px;
+
+background: var(--verde);
+
+color: white;
+
+padding: 7px 11px;
+
+font-size: 13px;
+
+font-weight: 900;
+
+letter-spacing: 1px;
+
+z-index: 20;
+
+pointer-events: none;
+}
+
+
+/* =========================================
+RÉCORD
+========================================= */
+
+.record {
+position: absolute;
+
+top: 8px;
+right: 8px;
+
+background: var(--rojo);
+
+color: white;
+
+padding: 7px 11px;
+
+font-size: 13px;
+
+font-weight: 900;
+
+letter-spacing: 1px;
+
+z-index: 20;
+
+pointer-events: none;
+}
+
+
+/* =========================================
+COMBO
+========================================= */
+
+.combo {
+position: absolute;
+
+top: 50px;
+left: 8px;
+
+background: white;
+
+border: 2px solid var(--verde);
+
+color: var(--verde);
+
+padding: 5px 9px;
+
+font-size: 12px;
+
+font-weight: 950;
+
+letter-spacing: 1px;
+
+z-index: 20;
+
+pointer-events: none;
+
+transition:
+transform 0.15s ease,
+background 0.15s ease;
+}
+
+.combo-activo {
+background: var(--verde);
+color: white;
+
+transform: scale(1.08);
+}
+
+.combo-maximo {
+background: var(--rojo);
+border-color: var(--rojo);
+color: white;
+
+transform: scale(1.12);
+
+animation: comboMaximo 0.7s infinite;
+}
+
+@keyframes comboMaximo {
+
+0%,
+100% {
+transform: scale(1.08);
+}
+
+50% {
+transform: scale(1.18);
+}
+
+}
+
+
+/* =========================================
+RACHA
+========================================= */
+
+.racha {
+position: absolute;
+
+top: 84px;
+left: 8px;
+
+background: rgba(255, 255, 255, 0.92);
+
+color: var(--verde);
+
+padding: 4px 8px;
+
+font-size: 10px;
+
+font-weight: 950;
+
+letter-spacing: 0.8px;
+
+z-index: 20;
+
+pointer-events: none;
+}
+
+
+/* =========================================
+DIFICULTAD
+========================================= */
+
+.dificultad {
+position: absolute;
+
+bottom: 8px;
+left: 8px;
+
+width: 125px;
+
+z-index: 20;
+
+pointer-events: none;
+}
+
+.dificultad-texto {
+font-size: 8px;
+
+font-weight: 950;
+
+letter-spacing: 1px;
+
+color:aliceblue;
+
+text-align: left;
+
+margin-bottom: 3px;
+
+text-shadow:
+1px 1px 0 rgba(255, 255, 255, 0),
+-1px -1px 0 rgba(255, 255, 255, 0);
+}
+
+.dificultad-barra {
+width: 100%;
+height: 7px;
+
+background: rgba(255, 255, 255, 0.85);
+
+border: 1px solid var(--verde);
+
+overflow: hidden;
+}
+
+.dificultad-progreso {
+width: 0%;
+height: 100%;
+
+background: var(--rojo);
+
+transition: width 0.25s ease;
+}
+
+
+/* =========================================
+BOTÓN REINICIAR
+========================================= */
+
+.boton-reiniciar {
+position: absolute;
+
+bottom: 8px;
+right: 8px;
+
+width: 34px;
+height: 34px;
+
+border: 2px solid var(--verde);
+
+background: white;
+
+color: var(--verde);
+
+font-size: 22px;
+
+font-weight: 900;
+
+line-height: 28px;
+
+cursor: pointer;
+
+z-index: 25;
+
+padding: 0;
+
+touch-action: manipulation;
+}
+
+.boton-reiniciar:active {
+background: var(--verde);
+color: white;
+
+transform: scale(0.92);
+}
+
+
+/* =========================================
+OBJETOS QUE CAEN
+========================================= */
+
+.queso,
+.objeto-caida {
+position: absolute;
+
+width: 42px;
+height: 42px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+font-size: 32px;
+
+line-height: 42px;
+
+z-index: 15;
+
+pointer-events: none;
+
+will-change: top, left;
+
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+}
+
+
+/* =========================================
+OBJETO +5
+========================================= */
+
+.objeto-especial {
+animation: objetoEspecial 0.65s infinite;
+}
+
+@keyframes objetoEspecial {
+
+0%,
+100% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(1.2);
+}
+
+}
+
+
+/* =========================================
+PUNTOS FLOTANTES
+========================================= */
+
+.puntos-flotantes {
+position: absolute;
+
+z-index: 25;
+
+font-size: 24px;
+
+font-weight: 950;
+
+letter-spacing: 1px;
+
+pointer-events: none;
+
+transform: translate(-50%, 0);
+
+animation: puntosSubir 0.7s ease-out forwards;
+}
+
+.puntos-positivos {
+color: var(--verde);
+
+text-shadow:
+1px 1px 0 white,
+-1px -1px 0 white;
+}
+
+.puntos-negativos {
+color: var(--rojo);
+
+text-shadow:
+1px 1px 0 white,
+-1px -1px 0 white;
+}
+
+.puntos-especiales {
+font-size: 34px;
+
+color: #c89b00;
+
+text-shadow:
+2px 2px 0 white,
+-2px -2px 0 white;
+}
+
+@keyframes puntosSubir {
+
+0% {
+opacity: 1;
+
+transform:
+translate(-50%, 0)
+scale(1);
+}
+
+100% {
+opacity: 0;
+
+transform:
+translate(-50%, -55px)
+scale(1.15);
+}
+
+}
+
+
+/* =========================================
+NUEVO RÉCORD
+========================================= */
+
+.nuevo-record {
+position: absolute;
+
+top: 50%;
+left: 50%;
+
+transform:
+translate(-50%, -50%)
+scale(0.7);
+
+background: var(--rojo);
+
+color: white;
+
+padding: 12px 18px;
+
+font-size: clamp(15px, 2vw, 25px);
+
+font-weight: 950;
+
+letter-spacing: 1.5px;
+
+white-space: nowrap;
+
+z-index: 28;
+
+opacity: 0;
+
+visibility: hidden;
+
+pointer-events: none;
+}
+
+.nuevo-record.mostrar {
+visibility: visible;
+
+animation: aparecerRecord 1.6s ease-out forwards;
+}
+
+@keyframes aparecerRecord {
+
+0% {
+opacity: 0;
+
+transform:
+translate(-50%, -50%)
+scale(0.65);
+}
+
+20% {
+opacity: 1;
+
+transform:
+translate(-50%, -50%)
+scale(1.08);
+}
+
+40% {
+transform:
+translate(-50%, -50%)
+scale(1);
+}
+
+80% {
+opacity: 1;
+}
+
+100% {
+opacity: 0;
+
+transform:
+translate(-50%, -50%)
+scale(1.05);
+}
+
+}
+
+
+/* =========================================
+EFECTO ESPECIAL +5
+========================================= */
+
+.zona-juego.efecto-especial {
+animation: efectoEspecial 0.35s ease-out;
+}
+
+@keyframes efectoEspecial {
+
+0% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(1.015);
+}
+
+100% {
+transform: scale(1);
+}
+
+}
+
+
+/* =========================================
+PANTALLA DE INICIO
+========================================= */
+
+.pantalla-inicio {
+position: absolute;
+
+top: 0;
+left: 0;
+
+width: 100%;
+height: 100%;
+
+background: rgba(255, 255, 255, 0.94);
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+z-index: 30;
+
+cursor: pointer;
+
+transition:
+opacity 0.25s ease,
+visibility 0.25s ease;
+}
+
+.pantalla-inicio.oculto {
+opacity: 0;
+
+visibility: hidden;
+
+pointer-events: none;
+}
+
+.inicio-contenido {
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+justify-content: center;
+
+gap: 8px;
+
+padding: 20px;
+
+text-align: center;
+}
+
+.inicio-icono {
+font-size: 42px;
+
+line-height: 1;
+}
+
+.inicio-titulo {
+color: var(--verde);
+
+font-size: clamp(16px, 2vw, 24px);
+
+font-weight: 950;
+
+letter-spacing: 1.5px;
+}
+
+.inicio-record {
+color: var(--rojo);
+
+font-size: clamp(10px, 1.2vw, 15px);
+
+font-weight: 900;
+
+letter-spacing: 1px;
+}
+
+.inicio-boton {
+margin-top: 5px;
+
+background: var(--verde);
+
+color: white;
+
+padding: 9px 18px;
+
+font-size: clamp(10px, 1.2vw, 15px);
+
+font-weight: 950;
+
+letter-spacing: 1px;
+
+animation: pulsarBoton 1.3s infinite;
+}
+
+@keyframes pulsarBoton {
+
+0%,
+100% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(1.05);
+}
+
+}
+
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer {
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+
+position: absolute;
+
+bottom: 8px;
+left: 0;
+
+width: 100%;
+
+padding: 0 20px;
+
+font-size: clamp(7px, 0.8vw, 11px);
+
+font-weight: 800;
+
+letter-spacing: 1px;
+
+color: #777;
+
+z-index: 20;
+}
+
+.version {
+text-align: left;
+}
+
+.derechos {
+text-align: right;
+}
+
+
+/* =========================================
+PANTALLAS CON POCA ALTURA
+========================================= */
+
+@media (max-height: 750px) {
+
+.pagina {
+padding: 5px 15px;
+}
+
+.contenido {
+max-height: 96dvh;
+}
+
+.encabezado h1 {
+font-size: clamp(50px, 7vw, 85px);
+
+margin: 2px 0 5px;
+}
+
+.separador {
+margin: 6px auto 8px;
+}
+
+.juego-section {
+padding: 7px 9px 9px;
+}
+
+.zona-juego {
+height: clamp(240px, 40vh, 390px);
+}
+
+footer {
+bottom: 5px;
+}
+
+}
+
+
+/* =========================================
+PANTALLAS MUY PEQUEÑAS DE ALTO
+========================================= */
+
+@media (max-height: 600px) {
+
+.pagina {
+padding: 3px 10px;
+}
+
+.mini-linea {
+gap: 8px;
+}
+
+.mini-linea span {
+width: 35px;
+height: 3px;
+}
+
+.mini-linea p {
+font-size: 14px;
+}
+
+.encabezado h1 {
+font-size: 55px;
+
+margin: 1px 0 3px;
+}
+
+.encabezado h2 {
+font-size: 10px;
+}
+
+.separador {
+width: 150px;
+
+height: 2px;
+
+margin: 5px auto 6px;
+}
+
+.juego-section {
+padding: 5px 7px 7px;
+
+border-width: 2px;
+
+border-radius: 10px;
+}
+
+.juego-titulo {
+font-size: 10px;
+
+padding: 3px 15px;
+
+margin-bottom: 3px;
+}
+
+.instruccion {
+font-size: 7px;
+
+margin-bottom: 4px;
+}
+
+.zona-juego {
+height: 220px;
+
+border-width: 1px;
+}
+
+.jugador {
+width: 55px;
+
+bottom: 5px;
+}
+
+footer {
+font-size: 7px;
+
+bottom: 3px;
+}
+
+.combo {
+top: 42px;
+
+font-size: 9px;
+
+padding: 4px 6px;
+}
+
+.racha {
+top: 70px;
+
+font-size: 8px;
+
+padding: 3px 5px;
+}
+
+.dificultad {
+width: 95px;
+
+bottom: 6px;
+}
+
+.boton-reiniciar {
+width: 28px;
+height: 28px;
+
+font-size: 18px;
+
+bottom: 6px;
+right: 6px;
+}
+
+}
+
+
+/* =========================================
+CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+.pagina {
+padding: 8px;
+}
+
+.contenido {
+width: 94vw;
+
+max-width: 650px;
+}
+
+.encabezado h1 {
+font-size: 65px;
+
+letter-spacing: -3px;
+}
+
+.encabezado h2 {
+font-size: 11px;
+}
+
+.mini-linea {
+gap: 9px;
+}
+
+.mini-linea span {
+width: 35px;
+height: 4px;
+}
+
+.mini-linea p {
+font-size: 16px;
+}
+
+.separador {
+width: 170px;
+
+margin: 7px auto 8px;
+}
+
+
+/* MINI JUEGO */
+
+.juego-section {
+width: 100%;
+
+padding: 6px 6px 7px;
+
+border-width: 2px;
+
+border-radius: 10px;
+}
+
+.juego-titulo {
+font-size: 11px;
+
+padding: 3px 15px;
+
+margin-bottom: 3px;
+}
+
+.instruccion {
+font-size: 7px;
+
+letter-spacing: 0.5px;
+
+margin-bottom: 5px;
+}
+
+.zona-juego {
+height: 450px;
+
+border-width: 2px;
+
+border-radius: 7px;
+}
+
+.jugador {
+width: 95px;
+
+bottom: 6px;
+}
+
+footer {
+font-size: 7px;
+
+bottom: 5px;
+}
+
+.marcador,
+.record {
+font-size: 8px;
+
+padding: 5px 7px;
+
+top: 6px;
+}
+
+.combo {
+top: 42px;
+left: 6px;
+
+font-size: 9px;
+
+padding: 4px 6px;
+}
+
+.racha {
+top: 70px;
+left: 6px;
+
+font-size: 8px;
+
+padding: 3px 5px;
+}
+
+.dificultad {
+width: 100px;
+
+bottom: 6px;
+left: 6px;
+}
+
+.dificultad-texto {
+font-size: 7px;
+}
+
+.dificultad-barra {
+height: 6px;
+}
+
+.boton-reiniciar {
+width: 30px;
+height: 30px;
+
+font-size: 19px;
+
+bottom: 6px;
+right: 6px;
+}
+
+.puntos-flotantes {
+font-size: 20px;
+}
+
+.puntos-especiales {
+font-size: 28px;
+}
+
+.inicio-icono {
+font-size: 34px;
+}
+
+.inicio-contenido {
+gap: 6px;
+}
+
+.inicio-boton {
+padding: 8px 14px;
+}
+
+.nuevo-record {
+font-size: 14px;
+
+padding: 9px 12px;
+}
+
+}
+
+
+/* =========================================
+CELULAR MUY PEQUEÑO
+========================================= */
+
+@media (max-width: 380px) {
+
+.pagina {
+padding: 5px;
+}
+
+.contenido {
+width: 96vw;
+}
+
+.encabezado h1 {
+font-size: 55px;
+}
+
+.encabezado h2 {
+font-size: 9px;
+}
+
+.juego-section {
+padding: 4px;
+}
+
+.juego-titulo {
+font-size: 9px;
+
+padding: 2px 10px;
+}
+
+.instruccion {
+font-size: 6px;
+}
+
+.zona-juego {
+height: 270px;
+}
+
+.jugador {
+width: 80px;
+}
+
+footer {
+font-size: 6px;
+}
+
+.objeto-caida,
+.queso {
+width: 36px;
+height: 36px;
+
+font-size: 27px;
+
+line-height: 36px;
+}
+
+.marcador,
+.record {
+font-size: 7px;
+
+padding: 4px 5px;
+}
+
+.combo {
+top: 38px;
+
+font-size: 8px;
+}
+
+.racha {
+top: 64px;
+
+font-size: 7px;
+}
+
+.dificultad {
+width: 80px;
+}
+
+.boton-reiniciar {
+width: 27px;
+height: 27px;
+
+font-size: 17px;
+}
+
+}
+
+
+/* =========================================
+PANTALLAS GRANDES
+========================================= */
+
+@media (min-width: 1400px) {
+
+.contenido {
+width: 1050px;
+}
+
+.encabezado h1 {
+font-size: 105px;
+}
+
+.zona-juego {
+height: 470px;
+}
+
+.jugador {
+width: 110px;
+}
+
+}
+.facebook-link {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+width: fit-content;
+margin: 18px auto;
+color: #1877f2;
+text-decoration: none;
+font-weight: bold;
+font-size: 14px;
+}
+
+.facebook-link img {
+width: 18px;
+height: 18px;
+display: block;
+object-fit: contain;
+}
+
+.facebook-link:hover {
+opacity: 0.8;
+}
+
